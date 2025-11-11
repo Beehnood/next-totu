@@ -9,10 +9,8 @@ function ContactUs() {
     const [products, setProducts] = useState([]);
 
   useEffect(() => {
-        axios("https://fakestoreapi.com/products").then((result)=> {
-
+        axios("http://localhost:8000/results").then((result)=> {  
             setProducts(result.data);
-
         });
     }, [])
 
@@ -20,8 +18,8 @@ function ContactUs() {
     <div>
         {products.map((item: IGetProducts)=> (
             <div key={item.id} className="bg-slate-400 mb-4">
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
+                <h2>{item.name}</h2>
+                <p>{item.overview}</p>
             </div>
         ))}
     </div>
