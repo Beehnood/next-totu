@@ -28,7 +28,7 @@ export interface Result {
 
 async function About() {
   const res = await fetch("http://localhost:8000/results", {
-    cache: "force-cache",
+    cache: "force-cache", 
   });
   const data = await res.json();
    
